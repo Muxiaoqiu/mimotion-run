@@ -161,11 +161,11 @@ class MiMotion():
                 pattern = re.compile('\\d{4}-\\d{2}-\\d{2} (\\d{2}):\\d{2}:\\d{2}')
                 find = re.search(pattern, result)
                 hour = find.group(1)
-                min_ratio = int(hour) / 20
-                max_ratio = int(hour) / 19
+                min_ratio = int(hour) / 18
+                max_ratio = int(hour) / 17
                 step_ratio = random.uniform(min_ratio, max_ratio)
             else:
-                min_ratio = 0.7
+                min_ratio = 0.8
                 max_ratio = 0.9
                 step_ratio = random.uniform(min_ratio, max_ratio)
         except Exception as e:
@@ -175,7 +175,7 @@ class MiMotion():
             min_step = math.ceil(int(self.check_item.get("min_step", 20000))*step_ratio)
         except Exception as e:
             print("初始化步数失败: 已将最小值设置为 29999", e)
-            min_step = 20000
+            min_step = 29999
         try:
             max_step = math.ceil(int(self.check_item.get("max_step", 29999))*step_ratio)
         except Exception as e:
