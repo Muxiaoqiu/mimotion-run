@@ -161,8 +161,8 @@ class MiMotion():
                 pattern = re.compile('\\d{4}-\\d{2}-\\d{2} (\\d{2}):\\d{2}:\\d{2}')
                 find = re.search(pattern, result)
                 hour = find.group(1)
-                min_ratio = int(hour) / 11
-                max_ratio = int(hour) / 10
+                min_ratio = int(hour) / 6
+                max_ratio = int(hour) / 5
                 step_ratio = random.uniform(min_ratio, max_ratio)
             else:
                 min_ratio = 1.5
