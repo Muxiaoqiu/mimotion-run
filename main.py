@@ -165,8 +165,8 @@ class MiMotion():
                 max_ratio = int(hour) / 20
                 step_ratio = random.uniform(min_ratio, max_ratio)
             else:
-                min_ratio = 1.2
-                max_ratio = 1.4
+                min_ratio = 1.0
+                max_ratio = 1.1
                 step_ratio = random.uniform(min_ratio, max_ratio)
         except Exception as e:
             print(e)
